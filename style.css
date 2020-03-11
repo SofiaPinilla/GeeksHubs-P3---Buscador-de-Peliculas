@@ -1,0 +1,43 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+.peliculas {
+    flex-wrap: wrap;
+    background-color: red;
+}
+
+.peliculas img {
+    display: flex;
+    justify-content: center;
+}
+
+.peliculas h1 {
+    text-align: center;
+    color: royalblue;
+}
+
+.visible {
+    display: flex;
+}
+
+.home {
+    flex-wrap: wrap;
+    background-image: url(imagenes/fondo.jpg);
+    width: 100%;
+    height: 960px;
+}
+
+.buscar {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boton {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
