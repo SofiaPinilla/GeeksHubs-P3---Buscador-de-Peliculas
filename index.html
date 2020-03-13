@@ -7,35 +7,28 @@
     <title>Movie Api</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
     <script src="script.js" async defer></script>
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <div class="menunavegacion">
-                <ul>
-                    <li id="inicioJavi">
-                        <span class="javi" href="#">
-                            <span>INICIO</span>
-                        </span>
-                    </li>
-                </ul>
+
+    <div class="home">
+
+        <form id="buscarForm">
+            <div class="input-group mb-3">
+                <input id="buscar" type="text" class="form-control" placeholder="Buscar pelicula..." aria-label="Recipient's username" aria-describedby="button-addon2" name="buscar">
             </div>
-        </ul>
-    </nav>
-    <div id="inicio">
-        <div class="home">
-            <div class="buscar"><input id="buscar" type="text"></div>
-            <div class="boton"> <button id="btn">Buscar Peliculas</button></div>
-
-
-        </div>
-
-        <div class="peliculas">
-        </div>
+            <div class="boton"><button type="submit" onClick="getPeliculas(event)">Buscar Peliculas</button></div>
+        </form>
     </div>
+
+    <div class="peliculas"></div>
+
+
+
+
 </body>
 
 </html>

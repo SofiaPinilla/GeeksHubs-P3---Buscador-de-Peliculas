@@ -1,19 +1,26 @@
 * {
     font-family: 'Roboto', sans-serif;
+    margin: 10px;
 }
 
 .peliculas {
+    display: flex;
     flex-wrap: wrap;
-    background-color: red;
+    margin: 10px;
 }
 
-.peliculas img {
+img {
+    width: 100%;
+}
+
+.card-img-top {
     display: flex;
     justify-content: center;
 }
 
 .peliculas h1 {
     text-align: center;
+    font-size: 30px;
     color: royalblue;
 }
 
@@ -21,11 +28,12 @@
     display: flex;
 }
 
+.invisible {
+    display: none;
+}
+
 .home {
     flex-wrap: wrap;
-    background-image: url(imagenes/fondo.jpg);
-    width: 100%;
-    height: 960px;
 }
 
 .buscar {
@@ -40,4 +48,27 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#buscar {
+    width: 30vw;
+    border-radius: 10px;
+}
+
+.btn-secondary {
+    margin: 10px;
+}
+
+#buscarForm {
+    margin: 10px;
+}
+
+.card {
+    margin: 10px;
+}
+
+button {
+    border: 1px solid;
+    padding: 5px;
+    width: 80%;
 }
