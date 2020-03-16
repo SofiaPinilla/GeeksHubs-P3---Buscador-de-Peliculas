@@ -22,7 +22,7 @@ Puedes ver el proyecto en https://sofiapinilla.github.io/GeeksHubs-P3---Buscador
 
 Para ver la descripción dale click al botón y te la mostrará. Aquí puedes ver un ejemplo
 
-[foto](imagenes/foto2.png) 
+![foto](imagenes/foto2.png) 
 
 ---
 Hecho por [Sofía Pinilla](https://github.com/SofiaPinilla) 😊
