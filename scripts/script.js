@@ -1,24 +1,38 @@
+//funcion para buscar las peliculas dando a intro
+const getPeliculas = (event) => {
+    if (event.key === 'Enter') {
+        const busqueda = event.target.value
+        axios.get(searchMovieURL + busqueda)
+            .then(res => {
+                const peliculas = res.data.results;
+                renderPeliculas(peliculas)
+            })
+            .catch(err => console.error(err))
+    }
+};
 const buscar = document.getElementById('buscar').addEventListener('keyup', getPeliculas) //aqui llamo al input, llamo al evento y ejecuto la función
+    //inicializo la array de géneros vacia hasta que me los traiga de la petición;
 let genres = []
-    //enlace de las peliculas
+    //enlace de las películas
 const searchMovieURL = 'https://api.themoviedb.org/3/search/movie?api_key=f1cbc5636aa2f2d3b7c9f1c1ca7c91de&language=es-ES&query='
-    //enlace de los generos de las peliculas
+    //enlace de los géneros de las películas
 const genreURL = 'https://api.themoviedb.org/3/genre/movie/list?api_key=f1cbc5636aa2f2d3b7c9f1c1ca7c91de&language=en-US'
 const form = document.getElementById('buscarForm') //aqui llamo al formulario
 
-axios.get(genreURL) //axios de los generos
+axios.get(genreURL) //axios para traerme los géneros
     .then(res => genres = res.data.genres)
     .catch(err => console.error(err))
 
-//función para pintar las peliculas
+//función para pintar las películas
 const renderPeliculas = peliculas => {
     document.querySelector('.peliculas').innerHTML = '';
     peliculas.forEach(pelicula => {
 
-        //codigo para sacar los generos
+        //código para sacar los géneros 1º filtro array de géneros por aquellos incluidos en la película y luego los mapeo para sacar sus names
         const peliculaGenres = genres.filter(genre => pelicula.genre_ids.includes(genre.id))
             .map(genre => genre.name)
         let genresH3 = '';
+        //aquí concateno con un forEach cada género dentro de un h3
         peliculaGenres.forEach(genre => genresH3 += `<h3 class="genre"> ${genre} </h3>`);
         console.log(genresH3);
         console.log(peliculaGenres)
@@ -55,23 +69,8 @@ form.addEventListener('submit', event => {
         })
 })
 
-
-//funcion para buscar las peliculas dando a intro
-function getPeliculas(event) {
-    if (event.key === 'Enter') {
-        const busqueda = event.target.value
-        axios.get(searchMovieURL + busqueda)
-            .then(res => {
-                const peliculas = res.data.results;
-                renderPeliculas(peliculas)
-            })
-            .catch(err => console.error(err))
-    }
-};
-
-
 //funcion para poder ver la descripción
-function verDescription(event, descripcion) {
+const verDescription = (event, descripcion) => {
     console.log(event.target.nextElementSibling)
     event.target.nextElementSibling.innerHTML = descripcion
 }
