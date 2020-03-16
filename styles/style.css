@@ -1,6 +1,5 @@
 * {
     font-family: 'Roboto', sans-serif;
-    margin: 10px;
 }
 
 .peliculas {
@@ -67,8 +66,9 @@ img {
     margin: 10px;
 }
 
-button {
+#button {
     border: 1px solid;
+    border-radius: 10px;
     padding: 5px;
     width: 80%;
 }
